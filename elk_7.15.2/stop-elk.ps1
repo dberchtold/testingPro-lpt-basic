@@ -1,0 +1,1 @@
+docker-compose --project-name testing-pro-2022 down
