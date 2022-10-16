@@ -1,4 +1,5 @@
 docker run --rm `
+    --name petclinc-rest `
     -p 9966:9966 `
     --cpus 1 `
     --memory "1024m" `
