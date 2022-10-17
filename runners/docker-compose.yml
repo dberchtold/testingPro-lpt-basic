@@ -1,0 +1,7 @@
+version: "3.9"
+
+services:
+  petclinic:
+    image: dberchtold/petclinic-rest-apm:latest
+    ports:
+      - "9966"
