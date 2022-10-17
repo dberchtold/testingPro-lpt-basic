@@ -71,16 +71,6 @@
         </collectionProp>
       </HeaderManager>
       <hashTree/>
-      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Test Properties" enabled="true">
-        <collectionProp name="Arguments.arguments">
-          <elementProp name="usedLetters" elementType="Argument">
-            <stringProp name="Argument.name">usedLetters</stringProp>
-            <stringProp name="Argument.value">abcdefghijklmnopqrstuvwxyz</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-        </collectionProp>
-      </Arguments>
-      <hashTree/>
       <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set pettypes" enabled="true">
         <stringProp name="delimiter">,</stringProp>
         <stringProp name="fileEncoding"></stringProp>
@@ -148,8 +138,8 @@
       <hashTree/>
       <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="Ultimate Thread Group Stress Test" enabled="false">
         <collectionProp name="ultimatethreadgroupdata">
-          <collectionProp name="-556021288">
-            <stringProp name="51508">400</stringProp>
+          <collectionProp name="-287035274">
+            <stringProp name="52469">500</stringProp>
             <stringProp name="48">0</stringProp>
             <stringProp name="48873">180</stringProp>
             <stringProp name="1784">80</stringProp>
@@ -173,10 +163,10 @@
         </ModuleController>
         <hashTree/>
       </hashTree>
-      <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="Ultimate Thread Group Baseline" enabled="true">
+      <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="Ultimate Thread Group Lasstest" enabled="false">
         <collectionProp name="ultimatethreadgroupdata">
-          <collectionProp name="-7554164">
-            <stringProp name="1567">10</stringProp>
+          <collectionProp name="1557674368">
+            <stringProp name="1691">50</stringProp>
             <stringProp name="0">0</stringProp>
             <stringProp name="1567">10</stringProp>
             <stringProp name="48687">120</stringProp>
@@ -200,15 +190,15 @@
         </ModuleController>
         <hashTree/>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="PET CLINIC SUITES" enabled="false">
-        <stringProp name="ThreadGroup.on_sample_error">startnextloop</stringProp>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="PET CLINIC SUITES" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
           <stringProp name="LoopController.loops">1</stringProp>
         </elementProp>
         <stringProp name="ThreadGroup.num_threads">1</stringProp>
         <stringProp name="ThreadGroup.ramp_time">1</stringProp>
-        <boolProp name="ThreadGroup.scheduler">true</boolProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
         <stringProp name="ThreadGroup.duration">20</stringProp>
         <stringProp name="ThreadGroup.delay"></stringProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">false</boolProp>
@@ -488,11 +478,11 @@
                   <elementProp name="" elementType="HTTPArgument">
                     <boolProp name="HTTPArgument.always_encode">false</boolProp>
                     <stringProp name="Argument.value">{&#xd;
-    &quot;firstName&quot;: &quot;${__RandomString(10, ${usedLetters})}&quot;,&#xd;
-    &quot;lastName&quot;: &quot;Jmetertest&quot;,&#xd;
-    &quot;address&quot;: &quot;1010 Stephansplatz 1&quot;,&#xd;
-    &quot;city&quot;: &quot;Wien&quot;,&#xd;
-    &quot;telephone&quot;: &quot;6085551023&quot;,&#xd;
+    &quot;firstName&quot;: &quot;${firstName}&quot;,&#xd;
+    &quot;lastName&quot;: &quot;${lastName}&quot;,&#xd;
+    &quot;address&quot;: &quot;${address}&quot;,&#xd;
+    &quot;city&quot;: &quot;${city}&quot;,&#xd;
+    &quot;telephone&quot;: &quot;${telephone}&quot;,&#xd;
     &quot;pets&quot;: [&#xd;
     ]&#xd;
 }</stringProp>
@@ -640,43 +630,15 @@
               <stringProp name="HTTPSampler.response_timeout"></stringProp>
             </HTTPSamplerProxy>
             <hashTree/>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET /api/owners/{ownerId}/pets/{petId}" enabled="false">
-              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
-                <collectionProp name="Arguments.arguments"/>
-              </elementProp>
-              <stringProp name="HTTPSampler.domain"></stringProp>
-              <stringProp name="HTTPSampler.port"></stringProp>
-              <stringProp name="HTTPSampler.protocol"></stringProp>
-              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-              <stringProp name="HTTPSampler.path">${base_path}/api/owners/${ownerId}/pets/${petId}</stringProp>
-              <stringProp name="HTTPSampler.method">GET</stringProp>
-              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
-              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
-              <stringProp name="HTTPSampler.response_timeout"></stringProp>
-              <stringProp name="TestPlan.comments">NOT IMPLEMENTED</stringProp>
-            </HTTPSamplerProxy>
-            <hashTree>
-              <JMESPathExtractor guiclass="JMESPathExtractorGui" testclass="JMESPathExtractor" testname="ownerid" enabled="true">
-                <stringProp name="JMESExtractor.referenceName">ownerid</stringProp>
-                <stringProp name="JMESExtractor.jmesPathExpr">$.ownerId</stringProp>
-                <stringProp name="JMESExtractor.matchNumber">0</stringProp>
-                <stringProp name="JMESExtractor.defaultValue">1</stringProp>
-              </JMESPathExtractor>
-              <hashTree/>
-            </hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST /api/owners/{ownerid}/pets" enabled="false">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST /api/owners/{ownerId}/pets" enabled="false">
               <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
               <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
                 <collectionProp name="Arguments.arguments">
                   <elementProp name="" elementType="HTTPArgument">
                     <boolProp name="HTTPArgument.always_encode">false</boolProp>
                     <stringProp name="Argument.value">{&#xd;
-  &quot;birthDate&quot;: &quot;2022-09-28&quot;,&#xd;
-  &quot;name&quot;: &quot;Leo&quot;,&#xd;
+  &quot;birthDate&quot;: &quot;${birthDate}&quot;,&#xd;
+  &quot;name&quot;: &quot;${name}&quot;,&#xd;
   &quot;id&quot;: 5,&#xd;
   &quot;type&quot;: ${petType}&#xd;
 }</stringProp>
@@ -688,7 +650,7 @@
               <stringProp name="HTTPSampler.port"></stringProp>
               <stringProp name="HTTPSampler.protocol"></stringProp>
               <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-              <stringProp name="HTTPSampler.path">${base_path}/api/owners/${ownerid}/pets</stringProp>
+              <stringProp name="HTTPSampler.path">${base_path}/api/owners/${ownerId}/pets</stringProp>
               <stringProp name="HTTPSampler.method">POST</stringProp>
               <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
               <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -805,7 +767,7 @@
                   <elementProp name="" elementType="HTTPArgument">
                     <boolProp name="HTTPArgument.always_encode">false</boolProp>
                     <stringProp name="Argument.value">{&#xd;
-  &quot;name&quot;: &quot;${__RandomString(10, ${usedLetters})}&quot;,&#xd;
+  &quot;name&quot;: &quot;${specialties}&quot;,&#xd;
   &quot;id&quot;: 2147483647&#xd;
 }</stringProp>
                     <stringProp name="Argument.metadata">=</stringProp>
@@ -826,17 +788,7 @@
               <stringProp name="HTTPSampler.connect_timeout"></stringProp>
               <stringProp name="HTTPSampler.response_timeout"></stringProp>
             </HTTPSamplerProxy>
-            <hashTree>
-              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
-                <collectionProp name="HeaderManager.headers">
-                  <elementProp name="" elementType="Header">
-                    <stringProp name="Header.name">Content-Type</stringProp>
-                    <stringProp name="Header.value">application/json</stringProp>
-                  </elementProp>
-                </collectionProp>
-              </HeaderManager>
-              <hashTree/>
-            </hashTree>
+            <hashTree/>
           </hashTree>
           <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="VETS SUITE" enabled="true">
             <boolProp name="TransactionController.includeTimers">false</boolProp>
@@ -904,8 +856,8 @@
                     <boolProp name="HTTPArgument.always_encode">false</boolProp>
                     <stringProp name="Argument.value">{&#xd;
   &quot;id&quot;: ${vetId},&#xd;
-  &quot;firstName&quot;: &quot;${firstName}&quot;,&#xd;
-  &quot;lastName&quot;: &quot;${lastName}&quot;,&#xd;
+  &quot;firstName&quot;: &quot;${vets_firstName}&quot;,&#xd;
+  &quot;lastName&quot;: &quot;${vets_lastName}&quot;,&#xd;
   &quot;specialties&quot;: ${ex_specialties}&#xd;
 }</stringProp>
                     <stringProp name="Argument.metadata">=</stringProp>
@@ -934,12 +886,13 @@
                   <elementProp name="" elementType="HTTPArgument">
                     <boolProp name="HTTPArgument.always_encode">false</boolProp>
                     <stringProp name="Argument.value">{&#xd;
-  &quot;firstName&quot;: &quot;${vetFirstName}&quot;,&#xd;
+  &quot;firstName&quot;: &quot;${vets_firstName}&quot;,&#xd;
   &quot;id&quot;: 0,&#xd;
-  &quot;lastName&quot;: &quot;${vetLastName}&quot;,&#xd;
+  &quot;lastName&quot;: &quot;${vets_lastName}&quot;,&#xd;
   &quot;specialties&quot;: [&#xd;
     {&#xd;
-      &quot;id&quot;: ${specialtyId}&#xd;
+      &quot;id&quot;: ${specialtyId},&#xd;
+      &quot;name&quot;: &quot;asdf&quot;&#xd;
     }&#xd;
   ]&#xd;
 }</stringProp>
@@ -961,17 +914,7 @@
               <stringProp name="HTTPSampler.connect_timeout"></stringProp>
               <stringProp name="HTTPSampler.response_timeout"></stringProp>
             </HTTPSamplerProxy>
-            <hashTree>
-              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
-                <collectionProp name="HeaderManager.headers">
-                  <elementProp name="" elementType="Header">
-                    <stringProp name="Header.name">Content-Type</stringProp>
-                    <stringProp name="Header.value">application/json</stringProp>
-                  </elementProp>
-                </collectionProp>
-              </HeaderManager>
-              <hashTree/>
-            </hashTree>
+            <hashTree/>
           </hashTree>
           <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="VISITS SUITE" enabled="true">
             <boolProp name="TransactionController.includeTimers">false</boolProp>
@@ -1044,54 +987,6 @@
               <stringProp name="HTTPSampler.contentEncoding"></stringProp>
               <stringProp name="HTTPSampler.path">${base_path}/api/visits/${visitId}</stringProp>
               <stringProp name="HTTPSampler.method">PUT</stringProp>
-              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
-              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
-              <stringProp name="HTTPSampler.response_timeout"></stringProp>
-            </HTTPSamplerProxy>
-            <hashTree/>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST /api/visits" enabled="false">
-              <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
-              <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
-                <collectionProp name="Arguments.arguments">
-                  <elementProp name="" elementType="HTTPArgument">
-                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                    <stringProp name="Argument.value">{&#xd;
-  &quot;id&quot;: 0,&#xd;
-  &quot;date&quot;: &quot;${visitDate}&quot;,&#xd;
-  &quot;description&quot;: &quot;${visitDescription}&quot;,&#xd;
-  &quot;pet&quot;: {&#xd;
-    &quot;id&quot;: ${petId},&#xd;
-    &quot;birthDate&quot;: &quot;${petBirthDate}&quot;,&#xd;
-    &quot;name&quot;: &quot;${petName}&quot;,&#xd;
-    &quot;type&quot;: {&#xd;
-       &quot;id&quot;: ${petTypeId}&#xd;
-    },&#xd;
-    &quot;owner&quot;: {&#xd;
-         &quot;id&quot;: ${ownerId},&#xd;
-         &quot;address&quot;: &quot;${address}&quot;,&#xd;
-	    &quot;city&quot;: &quot;${city}&quot;,&#xd;
-	    &quot;firstName&quot;: &quot;${firstName}&quot;,&#xd;
-	    &quot;lastName&quot;: &quot;${lastName}&quot;,&#xd;
-	    &quot;telephone&quot;: &quot;${telephone}&quot;&#xd;
-    },&#xd;
-    &quot;visits&quot;: []&#xd;
-   }&#xd;
-}&#xd;
-</stringProp>
-                    <stringProp name="Argument.metadata">=</stringProp>
-                  </elementProp>
-                </collectionProp>
-              </elementProp>
-              <stringProp name="HTTPSampler.domain"></stringProp>
-              <stringProp name="HTTPSampler.port"></stringProp>
-              <stringProp name="HTTPSampler.protocol"></stringProp>
-              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-              <stringProp name="HTTPSampler.path">${base_path}/api/visits</stringProp>
-              <stringProp name="HTTPSampler.method">POST</stringProp>
               <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
               <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
               <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
@@ -1338,7 +1233,7 @@
           </value>
         </objProp>
         <stringProp name="filename"></stringProp>
-        <longProp name="interval_grouping">1000</longProp>
+        <longProp name="interval_grouping">500</longProp>
         <boolProp name="graph_aggregated">true</boolProp>
         <stringProp name="include_sample_labels"></stringProp>
         <stringProp name="exclude_sample_labels"></stringProp>
@@ -1348,7 +1243,7 @@
         <boolProp name="exclude_checkbox_state">false</boolProp>
       </kg.apc.jmeter.vizualizers.CorrectedResultCollector>
       <hashTree/>
-      <BackendListener guiclass="BackendListenerGui" testclass="BackendListener" testname="Backend Listener" enabled="true">
+      <BackendListener guiclass="BackendListenerGui" testclass="BackendListener" testname="Backend Listener" enabled="false">
         <elementProp name="arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" enabled="true">
           <collectionProp name="Arguments.arguments">
             <elementProp name="es.scheme" elementType="Argument">
