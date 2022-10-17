@@ -1,4 +1,4 @@
-docker run --rm `
+docker run --rm --detach `
     --name petclinc-rest `
     -p 9966:9966 `
     --cpus 1 `

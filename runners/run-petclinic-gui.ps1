@@ -1,4 +1,4 @@
-docker run --rm `
+docker run --rm --detach `
     --name petclinc-gui `
     -p 8080:8080 `
     --cpus 1 `
