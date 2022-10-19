@@ -1,1 +1,0 @@
-docker-compose --file .\runners\docker-compose.yml up -d --scale petclinic=5
