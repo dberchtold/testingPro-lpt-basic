@@ -1,13 +1,13 @@
 {
 	"info": {
-		"_postman_id": "3473dea8-7d51-4e6a-ab6c-51052dbb13ad",
+		"_postman_id": "fe336e52-808f-400e-83c4-908c6d8309a3",
 		"name": "Setup",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "19211914"
 	},
 	"item": [
 		{
-			"name": "Elasticsearch",
+			"name": "ELK",
 			"item": [
 				{
 					"name": "get version",
@@ -127,6 +127,40 @@
 						"body": {
 							"mode": "raw",
 							"raw": "{\r\n  \"index_pattern\": {\r\n      \"id\": \"dd616bf0-1c55-11ec-b304-c39d5a0a2b0z\",\r\n      \"timeFieldName\": \"Timestamp\",\r\n      \"title\": \"jmeter*\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{kibana_server}}/api/index_patterns/index_pattern",
+							"host": [
+								"{{kibana_server}}"
+							],
+							"path": [
+								"api",
+								"index_patterns",
+								"index_pattern"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST KIBANA index pattern APM",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "kbn-xsrf",
+								"value": "true",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"index_pattern\": {\r\n      \"id\": \"d0dbd5cd-f2af-422b-87f2-07ef45f31a75\",\r\n      \"timeFieldName\": \"@timestamp\",\r\n      \"title\": \"apm-*\"\r\n  }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
