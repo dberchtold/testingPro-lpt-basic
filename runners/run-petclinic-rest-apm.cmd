@@ -1,5 +1,5 @@
 docker run --rm --detach ^
-    --name petclinc-rest-apm ^
+    --name petclinic-rest-apm ^
     -p 9966:9966 ^
     --cpus 1 ^
     --memory "400m" ^
